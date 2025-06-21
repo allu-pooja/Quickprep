@@ -4,3 +4,5 @@ nltk
 sumy
 fpdf
 PyMuPDF
+bcrypt
+
