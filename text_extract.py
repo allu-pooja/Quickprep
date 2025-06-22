@@ -1,5 +1,5 @@
 import fitz
-
+import nlp
 def extract_text_from_PDF_files(file):
     doc=fitz.open(stream=file.read(),filetype="pdf")
     text=""
