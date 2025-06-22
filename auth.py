@@ -1,8 +1,8 @@
 from pymongo import MongoClient
 import bcrypt
 
-
-Client=MongoClient(st.secrets["mongo"]["uri"])
+MONGO_URI=st.secrets["mongo"]["uri"]
+Client=MongoClient(MONGO_URI)
 db=Client["Quickprep"]
 users_collection=db["users"]
 
