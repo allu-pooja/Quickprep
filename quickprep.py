@@ -106,7 +106,7 @@ def quickprep_page():
         st.write(st.session_state["extracted_text"][:1000])
 
         st.header("Summary")
-        st.markdown(summarize_text(extracted_text),unsafe_allow_html=True)
+        st.markdown(summarize_text(st.session_state["extracted_text"]),unsafe_allow_html=True)
         st.write(st.session_state["summary"])
 
      # Download summarized pdf
