@@ -10,7 +10,7 @@ from pdf_conversion import create_pdf
 from auth import save_user_history
 from auth import get_user_history
 
-client=pymongo.MongoClient("mongodb+srv://quickprepuser:quickpreppass456@cluster0.i8yunnv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client=pymongo.MongoClient(st.secrets["mongo"]["uri"])
 db=client["Quickprep"]
 history_collection=db["history"]
 
