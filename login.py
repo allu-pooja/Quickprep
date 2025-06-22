@@ -16,7 +16,7 @@ def login_page():
             st.session_state["authenticated"]=True
             st.session_state["username"]=username
 
-            MONGO_URI=st.secrets["mongo"]["uri"]
+            MONGO_URI="mongodb://localhost:27017"
             Client=pymongo.MongoClient(MONGO_URI)
             db=Client["Quickprep"]
             users=db["users"]

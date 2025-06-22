@@ -2,7 +2,7 @@ import streamlit as st
 from pymongo import MongoClient
 import bcrypt
 
-MONGO_URI=st.secrets["mongo"]["uri"]
+MONGO_URI="mongodb://localhost:27017"
 Client=MongoClient(MONGO_URI)
 db=Client["Quickprep"]
 users_collection=db["users"]

@@ -1,5 +1,6 @@
 import streamlit as st
 import nltk
+import nlp
 import pymongo
 import io
 from text_extract import extract_text_from_PDF_files
@@ -10,8 +11,8 @@ from pdf_conversion import create_pdf
 from auth import save_user_history
 from auth import get_user_history
 
-MONGO_URI=st.secrets["mongo"]["uri"]
-client=pymongo.MongoClient(MONGO_URI)
+
+client=pymongo.MongoClient("mongodb://localhost:27017")
 db=client["Quickprep"]
 history_collection=db["history"]
 
