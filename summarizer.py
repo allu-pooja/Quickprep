@@ -5,7 +5,14 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 
-nlp=spacy.load("en_core_web_sm")
+import spacy.cli
+
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    spacy.cli.download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+
 
 def spacy_sent_tokenize(text):
     doc=nlp(text)
