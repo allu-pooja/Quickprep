@@ -5,3 +5,4 @@ sumy
 fpdf
 PyMuPDF
 bcrypt
+python-dotenv
