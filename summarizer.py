@@ -12,10 +12,6 @@ try:
 except OSError:
     spacy.cli.download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
-try:
-    nltk.data.find("tokenizers/punkt")
-except LookupError:
-    nltk.download("punkt")
 
 def spacy_sent_tokenize(text):
     doc=nlp(text)
