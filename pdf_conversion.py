@@ -15,6 +15,6 @@ def create_pdf(summary_text):
 
     output=io.BytesIO()
     pdf_bytes=pdf.output(dest='S')
-    output.write(pdf_bytes)
+    output.write(pdf_bytes.encode('latin-1'))
     output.seek(0)
     return output
