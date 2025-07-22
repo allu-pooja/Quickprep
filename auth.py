@@ -1,7 +1,10 @@
 from pymongo import MongoClient
 import bcrypt
+import os
+from dotenv import load_dotenv
 
-MONGO_URI="mongodb://localhost:27017"
+load_dotenv()
+MONGO_URI=os.getenv("MONGO_URI")
 Client=MongoClient(MONGO_URI)
 db=Client["Quickprep"]
 users_collection=db["users"]

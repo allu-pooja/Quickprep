@@ -3,7 +3,11 @@ from auth import authenticate_user
 from auth import get_user_history
 from auth import create_user
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 import pymongo
+
+load_dotenv()
 def login_page():
     st.title("Login")
 
@@ -16,7 +20,7 @@ def login_page():
             st.session_state["authenticated"]=True
             st.session_state["username"]=username
 
-            MONGO_URI="mongodb://localhost:27017"
+            MONGO_URI=os.getenv("MONGO_URI")
             Client=pymongo.MongoClient(MONGO_URI)
             db=Client["Quickprep"]
             users=db["users"]

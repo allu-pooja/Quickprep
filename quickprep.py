@@ -10,9 +10,12 @@ from nltk.stem import WordNetLemmatizer
 from pdf_conversion import create_pdf
 from auth import save_user_history
 from auth import get_user_history
+from dotenv import load_dotenv
+import os
 
-
-client=pymongo.MongoClient("mongodb://localhost:27017")
+load_dotenv()
+MONGO_URI=os.getenv("MONGO_URI")
+client=pymongo.MongoClient(MONGO_URI)
 db=client["Quickprep"]
 history_collection=db["history"]
 
