@@ -1,6 +1,6 @@
 import nltk
 import spacy
-nltk.data.path.append(r'C:\Users\allup\OneDrive\Desktop\python\QuickPrep\nltk_data\tokenizers\punkt')
+nltk.data.path.append(r'C:\Users\allup\OneDrive\Desktop\python\QuickPrep\nltk_data')
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
