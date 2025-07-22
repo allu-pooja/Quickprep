@@ -20,7 +20,7 @@ def login_page():
             st.session_state["authenticated"]=True
             st.session_state["username"]=username
 
-            MONGO_URI=os.getenv("MONGO_URI")
+            MONGO_URI=os.getenv("MONGO_URI") or st.secrets["MONGO_URI"]
             Client=pymongo.MongoClient(MONGO_URI)
             db=Client["Quickprep"]
             users=db["users"]

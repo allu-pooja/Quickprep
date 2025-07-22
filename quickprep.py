@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-MONGO_URI=os.getenv("MONGO_URI")
+MONGO_URI=os.getenv("MONGO_URI") or st.secrets["MONGO_URI"]
 client=pymongo.MongoClient(MONGO_URI)
 db=client["Quickprep"]
 history_collection=db["history"]
