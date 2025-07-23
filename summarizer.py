@@ -39,4 +39,4 @@ def summarize_text(text,num_sentences=5):
     parser = PlaintextParser.from_string(clean_text, CustomSumyTokenizer(punkt_tokenizer))
     summarizer=LexRankSummarizer()
     summary=summarizer(parser.document,num_sentences)
-    return "\n\n".join(f"• {sentence}" for sentence in summary)
+    return "\n\n".join(f" *{sentence}" for sentence in summary)
