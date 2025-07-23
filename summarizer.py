@@ -7,6 +7,7 @@ import pickle
 import spacy.cli
 import nltk.data
 from nltk.tokenize.punkt import PunktSentenceTokenizer
+from nltk.tokenize import word_tokenize
 
 nltk_path = os.path.join(os.path.dirname(__file__), "nltk_data")
 nltk.data.path.append(nltk_path)
@@ -29,7 +30,8 @@ class CustomSumyTokenizer:
         self.tokenizer = tokenizer
     def to_sentences(self, text):
         return self.tokenizer.tokenize(text)
-
+    def to_words(self, text):
+        return word_tokenize(text) 
 def summarize_text(text,num_sentences=5):
     sentences=spacy_sent_tokenize(text)
     clean_text=" ".join(sentences)
