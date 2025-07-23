@@ -1,6 +1,6 @@
 streamlit
 pymongo
-nltk
+nltk==3.7
 sumy
 spacy
 fpdf
