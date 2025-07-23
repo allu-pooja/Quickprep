@@ -5,16 +5,14 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import pickle
 import spacy.cli
+import nltk.data
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 
 nltk_path = os.path.join(os.path.dirname(__file__), "nltk_data")
-punkt_path = os.path.join(nltk_path, "tokenizers", "punkt", "english.pickle")
 nltk.data.path.append(nltk_path)
 
-with open(punkt_path, "rb") as f:
-    punkt_tokenizer = PunktSentenceTokenizer(pickle.load(f))
-
-    
+punkt_tokenizer = nltk.data.load("tokenizers/punkt/english.pickle")
+  
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
